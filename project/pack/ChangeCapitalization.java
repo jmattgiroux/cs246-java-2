@@ -1,7 +1,8 @@
 
 //https://www.w3schools.com/java/java_packages.asp 
+//https://www.studytonight.com/java/package-in-java.php
 
-//package java_2;
+package pack;
 
 //https://www.w3schools.com/java/java_arraylist.asp
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class ChangeCapitalization {
 
 
     //default constructor
-    ChangeCapitalization(){
+    public ChangeCapitalization(){
 
         //initialize member variables
         originalString = new ArrayList<String>();
