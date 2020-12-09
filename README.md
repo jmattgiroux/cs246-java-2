@@ -46,8 +46,25 @@ Java Extension Pack by Microsoft, version 0.10.0, from 8/13/2020\
 
 Build and Execution Instructions:
 
+From a terminal started within the cs246-java-2 directory:
+- javac ./pack/ChangeCapitalization.java 
+- javac Main.java 
+- java Main 
+
+This will compile and execute this program.
 
 Screenshots:
+
+![First screenshot of Change Capitalization program]
+
+![Second screenshot of Change Capitalization program]
+
+![Third screenshot of Change Capitalization program]
+
+![Fourth screenshot of Change Capitalization program]
+
+![Fifth screenshot of Change Capitalization program]
+
 
 
 
