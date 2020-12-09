@@ -58,27 +58,27 @@ Screenshots:
 These 5 screenshots continue into each other, with the last command of the previous screenshot being the first command shown in the next screenshot.
 
 - Screenshot of compilation and execution of program, as well as the program
-- - Taking user input
-- - Converting input into all upper case
-- - Converting input into all lower case
+    - Taking user input
+    - Converting input into all upper case
+    - Converting input into all lower case
 ![First screenshot of Change Capitalization program](https://github.com/jmattgiroux/cs246-java-2/blob/master/screenshot_1_compile_run_input_upper_lower.png)
 
 - Screenshot of
-- - Converting input into normal case
-- - reverting input back to its original state
+    - Converting input into normal case
+    - reverting input back to its original state
 ![Second screenshot of Change Capitalization program](https://github.com/jmattgiroux/cs246-java-2/blob/master/screenshot_2_lower_normal_original.png)
 
 - Screenshot of
-- - Converting input into upper case
-- - reverting input into lower case
+    - Converting input into upper case
+    - reverting input into lower case
 ![Third screenshot of Change Capitalization program](https://github.com/jmattgiroux/cs246-java-2/blob/master/screenshot_3_original_upper_lower.png)
 
 - Screenshot of
-- - Converting into the previous state it was in (that is, reverting from lower case back to the previous state, which was upper case)
+    - Converting into the previous state it was in (that is, reverting from lower case back to the previous state, which was upper case)
 ![Fourth screenshot of Change Capitalization program](https://github.com/jmattgiroux/cs246-java-2/blob/master/screenshot_4_lower_revert.png)
 
 - Screenshot of
-- - Program finishing its execution
+    - Program finishing its execution
 ![Fifth screenshot of Change Capitalization program](https://github.com/jmattgiroux/cs246-java-2/blob/master/screenshot_5_quit.png)
 
 
