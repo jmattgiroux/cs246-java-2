@@ -101,6 +101,27 @@ public class ChangeCapitalization {
 
     public void normalCapitalize(){
 
+        // save previous state
+        previousState = new ArrayList<String>(currentState);
+
+        // put everything in lowercase
+        for (int i = 0; i < currentState.size() ; i++)
+        {
+            currentState.set(i, currentState.get(i).toLowerCase());
+        }
+
+        for (int i = 0; i < currentState.size() ; i++)
+        {
+            // https://stackoverflow.com/questions/3904579/how-to-capitalize-the-first-letter-of-a-string-in-java
+            if (i == 0)
+                currentState.set(i, currentState.get(i).substring(0, 1).toUpperCase() + currentState.get(i).substring(1));
+            if (i != 0)
+                if (currentState.get(i-1).endsWith("."))
+                    currentState.set(i, currentState.get(i).substring(0, 1).toUpperCase() + currentState.get(i).substring(1));
+
+        }
+        displayCurrentState();
+
     }
 
     public void revertChangesToPreviousStep(){
@@ -116,6 +137,10 @@ public class ChangeCapitalization {
     }
 
     public void revertChangesToBeginning(){
+
+        // save previous state
+        previousState = new ArrayList<String>(currentState);
+
         currentState = new ArrayList<String>(originalString);
         displayCurrentState();
     }
