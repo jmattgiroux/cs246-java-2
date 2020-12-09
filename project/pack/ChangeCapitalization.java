@@ -10,6 +10,10 @@ import java.util.ArrayList;
 // https://www.w3schools.com/java/java_user_input.asp
 import java.util.Scanner;
 
+// https://beginnersbook.com/2015/05/java-string-to-arraylist-conversion/
+import java.util.Arrays;
+import java.util.List;
+
 
 public class ChangeCapitalization {
     
@@ -20,7 +24,7 @@ public class ChangeCapitalization {
     ArrayList<String> currentState;
 
     //string from previous step
-    ArrayList<String> previousStepString;
+    ArrayList<String> previousState;
 
     //boolean variables that control program's logic
     //for seeing if the user has just started the program
@@ -50,7 +54,7 @@ public class ChangeCapitalization {
         //initialize member variables
         originalString = new ArrayList<String>();
         currentState = new ArrayList<String>();
-        previousStepString = new ArrayList<String>();
+        previousState = new ArrayList<String>();
         firstTime = true;
         stringToEditNotLoaded = true;
         quitProgramBool = false;
@@ -92,6 +96,13 @@ public class ChangeCapitalization {
     
     public void displayCurrentState(){
 
+        for (int i = 0; i < currentState.size() ; i++)
+        {
+            if (i != 0 && i != currentState.size())
+                System.out.print(" ");
+            System.out.print(currentState.get(i));
+        }
+        System.out.print("\n\n");
 
     }
 
@@ -159,12 +170,14 @@ public class ChangeCapitalization {
         {
             String file = getFileName();
             readFile(file);
+            stringToEditNotLoaded = false;
 
         }
         //                         "Input a String: Input\n" + 
         if (userInput.equalsIgnoreCase("Input"))
         {
             getStringFromUser();
+            stringToEditNotLoaded = false;
         }
         //                         "Quit Program: Quit\n";
 
@@ -227,6 +240,29 @@ public class ChangeCapitalization {
 
     public void getStringFromUser(){
 
+
+        System.out.println("Please input your string: ");
+
+        // https://www.geeksforgeeks.org/difference-between-next-and-nextline-methods-in-java/
+        String string = scanner.nextLine();
+
+       
+
+        // https://beginnersbook.com/2015/05/java-string-to-arraylist-conversion/
+        String str[] = string.split(" ");
+        List<String> list = new ArrayList<String>();
+        list = Arrays.asList(str);
+
+
+        // https://stackoverflow.com/questions/5134466/how-to-cast-arraylist-from-list/41136009
+        originalString = new ArrayList<String>(list);
+
+        currentState = originalString;
+
+        previousState = originalString;
+
+
+        
     }
 
     public void quitProgram(){
