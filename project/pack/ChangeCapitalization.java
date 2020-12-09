@@ -107,7 +107,7 @@ public class ChangeCapitalization {
 
         ArrayList<String> arrayList = new ArrayList<String>();
 
-        // shuffle states around
+        // shuffle states around; works
         arrayList = new ArrayList<String>(currentState);
         currentState = new ArrayList<String>(previousState);
         previousState = new ArrayList<String>(arrayList);
