@@ -76,18 +76,42 @@ public class ChangeCapitalization {
 
     public void upperCapitalize(){
 
+        //save currentState to previousState
+        previousState = currentState;
+
+        for (int i = 0; i < currentState.size() ; i++)
+        {
+            currentState.set(i, currentState.get(i).toUpperCase());
+        }
+        displayCurrentState();
+
     }
 
     public void lowerCapitalize(){
 
+        //save currentState to previousState
+        previousState = currentState;
+
+        for (int i = 0; i < currentState.size() ; i++)
+        {
+            currentState.set(i, currentState.get(i).toLowerCase());
+        }
+        displayCurrentState();
     }
 
     public void normalCapitalize(){
 
     }
 
-    public void revertChangesOneStep(){
+    public void revertChangesToPreviousStep(){
 
+        //save previousState
+        ArrayList<String> arrayList = new ArrayList<String>(currentState);
+
+        currentState = previousState;
+        previousState = arrayList;
+
+        displayCurrentState();
     }
 
     public void revertChangesToBeginning(){
@@ -138,7 +162,7 @@ public class ChangeCapitalization {
 
         if (quitProgramBool)
         {
-            System.out.println(quit);
+            System.out.print(quit);
             return;
         }
             
@@ -149,7 +173,7 @@ public class ChangeCapitalization {
 
         if (!stringToEditNotLoaded)
         {
-            System.out.println(chooseEdit);
+            System.out.print(chooseEdit);
             return;
         }
 
@@ -159,7 +183,7 @@ public class ChangeCapitalization {
 
     public void getUserInput(){
         userInput = scanner.nextLine();
-        System.out.println("\n");
+        System.out.print("\n");
     }
 
     public void actOnUserInput(){
@@ -168,9 +192,10 @@ public class ChangeCapitalization {
         //                         "Load a file: File\n" +
         if (userInput.equalsIgnoreCase("File"))
         {
-            String file = getFileName();
-            readFile(file);
-            stringToEditNotLoaded = false;
+            System.out.println("Sorry, file functionality is not yet present\n\n");
+            // String file = getFileName();
+            // readFile(file);
+            // stringToEditNotLoaded = false;
 
         }
         //                         "Input a String: Input\n" + 
@@ -205,10 +230,10 @@ public class ChangeCapitalization {
         }
 
 
-        // "Revert Changes Back One Step: Revert\n" +
+        // "Revert to Previous State: Revert\n" +
         if (userInput.equalsIgnoreCase("Revert"))
         {
-            normalCapitalize();
+            revertChangesToPreviousStep();
         }
 
         // "Revert Current State to Original State: Original \n" +
@@ -265,9 +290,6 @@ public class ChangeCapitalization {
         
     }
 
-    public void quitProgram(){
-
-    }
 
 
 
