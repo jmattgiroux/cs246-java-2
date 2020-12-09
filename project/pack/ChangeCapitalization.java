@@ -1,11 +1,14 @@
 
-//https://www.w3schools.com/java/java_packages.asp 
-//https://www.studytonight.com/java/package-in-java.php
+// https://www.w3schools.com/java/java_packages.asp 
+// https://www.studytonight.com/java/package-in-java.php
 
 package pack;
 
-//https://www.w3schools.com/java/java_arraylist.asp
+// https://www.w3schools.com/java/java_arraylist.asp
 import java.util.ArrayList;
+
+// https://www.w3schools.com/java/java_user_input.asp
+import java.util.Scanner;
 
 
 public class ChangeCapitalization {
@@ -28,13 +31,16 @@ public class ChangeCapitalization {
     boolean stringToEditNotLoaded;
 
     //for seeing if user wants to quit the program
-    boolean quitProgramBool;
+    public boolean quitProgramBool;
 
     //ChangeCapitalization member variables;
     String userInput;
 
     //where the file name the user wants to read or edit is stored
     String file;
+
+    // We're getting user input in this program, so we need a Scanner object
+    Scanner scanner;
 
 
 
@@ -50,6 +56,7 @@ public class ChangeCapitalization {
         quitProgramBool = false;
         userInput = "";
         file = " ";
+        scanner = new Scanner(System.in);
 
     }
 
@@ -92,20 +99,22 @@ public class ChangeCapitalization {
 
 
         String welcome = "Welcome to the Capitalization Editor!\n";
-        String initialPrompt =  "Please choose 1 option:\n" +
-                                "Load a file: F\n" +
-                                "Input a String: I\n" + 
-                                "Quit Program: Q\n";
+        String initialPrompt =  "Please choose 1 option by typing the word after the colon:\n" +
+                                "Load a file: File\n" +
+                                "Input a String: Input\n" + 
+                                "Quit Program: Quit\n" +
+                                "Input: ";
 
         String chooseEdit = "Please choose which edit you would like to make:\n" +
-                            "Upper Capitalization: U\n" +
-                            "Lower Capitalization: L\n" +
-                            "Normal Capitalization: N\n" +
-                            "Display Current State: D\n" +
-                            "Revert Changes Back One Step: R\n" +
-                            "Revert Current State to Original State: O\n" +
-                            "Export Current State to File: E\n" +
-                            "Quit Program: Q\n";
+                            "Upper Capitalization: Upper\n" +
+                            "Lower Capitalization: Lower\n" +
+                            "Normal Capitalization: Normal\n" +
+                            "Display Current State: Display\n" +
+                            "Revert Changes Back One Step: Revert\n" +
+                            "Revert Current State to Original State: Original\n" +
+                            "Export Current State to File: Export\n" +
+                            "Quit Program: Quit\n" +
+                            "Input: ";
 
         String quit = "Thank you. Goodbye.\n";
 
@@ -124,7 +133,6 @@ public class ChangeCapitalization {
             
         if (stringToEditNotLoaded){
             System.out.print(initialPrompt);
-            stringToEditNotLoaded = false;
             return;
         }
 
@@ -139,72 +147,74 @@ public class ChangeCapitalization {
     }
 
     public void getUserInput(){
-
-        
+        userInput = scanner.nextLine();
+        System.out.println("\n");
     }
 
     public void actOnUserInput(){
 
         // String initialPrompt =  "Please choose 1 option:\n" +
-        //                         "Load a file: F\n" +
-        if (userInput == "F")
+        //                         "Load a file: File\n" +
+        if (userInput.equalsIgnoreCase("File"))
         {
             String file = getFileName();
             readFile(file);
 
         }
-        //                         "Input a String: I\n" + 
-        if (userInput == "I")
+        //                         "Input a String: Input\n" + 
+        if (userInput.equalsIgnoreCase("Input"))
         {
             getStringFromUser();
         }
-        //                         "Quit Program: Q\n";
-        if (userInput == "Q")
+        //                         "Quit Program: Quit\n";
+
+        // https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java
+        if (userInput.equalsIgnoreCase("Quit"))
         {
-            quitProgram();
+            quitProgramBool = true;
         }
 
         // String chooseEdit = "Please choose which edit you would like to make:\n" +
-        //                     "Upper Capitalization: U\n" +
-        if (userInput == "U")
+        //                     "Upper Capitalization: Upper\n" +
+        if (userInput.equalsIgnoreCase("Upper"))
         {
             upperCapitalize();
         }
-        //                     "Lower Capitalization: L\n" +
-        if (userInput == "L")
+        //                     "Lower Capitalization: Lower\n" +
+        if (userInput.equalsIgnoreCase("Lower"))
         {
             lowerCapitalize();
         }
-        //                     "Normal Capitalization: N\n" +
-        if (userInput == "N")
+        //                     "Normal Capitalization: Normal\n" +
+        if (userInput.equalsIgnoreCase("Normal"))
         {
             normalCapitalize();
         }
 
 
-        // "Revert Changes Back One Step: R\n" +
-        if (userInput == "R")
+        // "Revert Changes Back One Step: Revert\n" +
+        if (userInput.equalsIgnoreCase("Revert"))
         {
             normalCapitalize();
         }
 
-        // "Revert Current State to Original State: O \n" +
-        if (userInput == "O")
+        // "Revert Current State to Original State: Original \n" +
+        if (userInput.equalsIgnoreCase("Original"))
         {
             normalCapitalize();
         }
 
-        //                     "Display Current State: D\n" +
-        if (userInput == "D")
+        //                     "Display Current State: Display\n" +
+        if (userInput.equalsIgnoreCase("Display"))
         {
             displayCurrentState();
         }
-        //                     "Export Current State to File: E\n" +
-        if (userInput == "E")
+        //                     "Export Current State to File: Export\n" +
+        if (userInput.equalsIgnoreCase("Export"))
         {
             writeFile(file);
         }
-        //                     "Quit Program: Q\n";
+        //                     "Quit Program: Quit\n";
         //already done above^
     }
 
