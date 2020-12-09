@@ -77,7 +77,7 @@ public class ChangeCapitalization {
     public void upperCapitalize(){
 
         //save currentState to previousState
-        previousState = currentState;
+        previousState = new ArrayList<String>(currentState);
 
         for (int i = 0; i < currentState.size() ; i++)
         {
@@ -90,7 +90,7 @@ public class ChangeCapitalization {
     public void lowerCapitalize(){
 
         //save currentState to previousState
-        previousState = currentState;
+        previousState = new ArrayList<String>(currentState);
 
         for (int i = 0; i < currentState.size() ; i++)
         {
