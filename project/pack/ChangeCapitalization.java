@@ -116,7 +116,7 @@ public class ChangeCapitalization {
     }
 
     public void revertChangesToBeginning(){
-        currentState = originalString;
+        currentState = new ArrayList<String>(originalString);
         displayCurrentState();
     }
     
