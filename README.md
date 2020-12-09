@@ -8,16 +8,16 @@ It is to display the capitalization and prompt the user on whether to export it 
 The purpose of creating this program is to gain familiarity with the following
 programming elements within Java:
 
-- Variables 
-- Expressions 
-- Conditionals 
-- Loops 
-- Functions
-- Classes 
+- Done: Variables 
+- Done: Expressions 
+- Done: Conditionals 
+- Done: Loops 
+- Done: Functions
+- Done: Classes 
 
 Stretch goal for this project: 
 
-- Use data structure from Java Collection Framework (such as ArrayList, TreeSet, and HashMap)
+- Done: Use data structure from Java Collection Framework (such as ArrayList, TreeSet, and HashMap)
 
 
 Development Environment: 
@@ -25,7 +25,7 @@ Development Environment:
 Ubuntu (Ubuntu 20.04.1 LTS) 
 
 openjdk version "14.0.2" 2020-07-14\
-OpenJDK Runtime Environment (build 14.0.2+12-Ubuntu-120.04)\ 
+OpenJDK Runtime Environment (build 14.0.2+12-Ubuntu-120.04)\
 OpenJDK 64-Bit Server VM (build 14.0.2+12-Ubuntu-120.04, mixed mode, sharing)
 
 Visual Studio Code\
@@ -39,7 +39,8 @@ V8: 8.3.110.13-electron.0\
 OS: Linux x64 5.4.0-52-generic
 
 Visual Studio Code Extensions\
-Java Extension Pack by Microsoft, version 0.10.0, from 8/13/2020\
+Java Extension Pack by Microsoft, version 0.10.0, from 8/13/2020
+
     Java Extension Pack is a collection of popular extensions that can help write, test\
     and debug Java applications in Visual Studio Code. Check out Java in VS Code to get started.
 
