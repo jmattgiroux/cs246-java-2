@@ -105,17 +105,19 @@ public class ChangeCapitalization {
 
     public void revertChangesToPreviousStep(){
 
-        //save previousState
-        ArrayList<String> arrayList = new ArrayList<String>(currentState);
+        ArrayList<String> arrayList = new ArrayList<String>();
 
-        currentState = previousState;
-        previousState = arrayList;
+        // shuffle states around
+        arrayList = new ArrayList<String>(currentState);
+        currentState = new ArrayList<String>(previousState);
+        previousState = new ArrayList<String>(arrayList);
 
         displayCurrentState();
     }
 
     public void revertChangesToBeginning(){
-
+        currentState = originalString;
+        displayCurrentState();
     }
     
     public void displayCurrentState(){
@@ -135,7 +137,7 @@ public class ChangeCapitalization {
 
         String welcome = "Welcome to the Capitalization Editor!\n";
         String initialPrompt =  "Please choose 1 option by typing the word after the colon:\n" +
-                                "Load a file: File\n" +
+                                // "Load a file: File\n" +
                                 "Input a String: Input\n" + 
                                 "Quit Program: Quit\n" +
                                 "Input: ";
@@ -147,7 +149,7 @@ public class ChangeCapitalization {
                             "Display Current State: Display\n" +
                             "Revert Changes Back One Step: Revert\n" +
                             "Revert Current State to Original State: Original\n" +
-                            "Export Current State to File: Export\n" +
+                            // "Export Current State to File: Export\n" +
                             "Quit Program: Quit\n" +
                             "Input: ";
 
@@ -239,7 +241,7 @@ public class ChangeCapitalization {
         // "Revert Current State to Original State: Original \n" +
         if (userInput.equalsIgnoreCase("Original"))
         {
-            normalCapitalize();
+            revertChangesToBeginning();
         }
 
         //                     "Display Current State: Display\n" +
@@ -266,10 +268,12 @@ public class ChangeCapitalization {
     public void getStringFromUser(){
 
 
-        System.out.println("Please input your string: ");
+        System.out.println("Please input your string: \n");
 
         // https://www.geeksforgeeks.org/difference-between-next-and-nextline-methods-in-java/
         String string = scanner.nextLine();
+
+        System.out.print("\n");
 
        
 
@@ -282,9 +286,9 @@ public class ChangeCapitalization {
         // https://stackoverflow.com/questions/5134466/how-to-cast-arraylist-from-list/41136009
         originalString = new ArrayList<String>(list);
 
-        currentState = originalString;
+        currentState = new ArrayList<String>(list);
 
-        previousState = originalString;
+        previousState = new ArrayList<String>(list);
 
 
         
