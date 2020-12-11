@@ -2,8 +2,8 @@
 
 Program Description: 
 
-A program that changes the capitalization of the user's input file or input string.
-It is to display the capitalization and prompt the user on whether to export it as a file.
+A program that changes the capitalization of the user's input string.
+It is to then display the capitalization.
 
 The purpose of creating this program is to gain familiarity with the following
 programming elements within Java:
